@@ -4,6 +4,7 @@ import { AppDataSource } from "./database/appDataSource";
 import areaRoutes from "./routes/areaRoutes"; 
 import leituraRoutes from "./routes/leituraRoutes";
 import sensorRoutes from "./routes/sensorRoutes";
+import pesquisadorRoutes from "./routes/pesquisador.routes"; // 💡 Novo import
 
 // 1. Carrega variáveis de ambiente
 dotenv.config();
@@ -29,6 +30,7 @@ app.post("/api/teste", (req, res) => {
 app.use("/api/areas", areaRoutes);
 app.use("/api/sensors", sensorRoutes);   
 app.use("/api/readings", leituraRoutes);
+app.use("/api/pesquisadores", pesquisadorRoutes); // 🚀 Nova rota registrada
 
 // 5. Inicialização do Banco de Dados e Servidor
 AppDataSource.initialize()
@@ -37,7 +39,7 @@ AppDataSource.initialize()
         
         app.listen(PORT, () => {
             console.log(`🚀 Servidor rodando em: http://localhost:${PORT}`);
-            console.log("💡 Entidades sincronizadas: Area, Sensor e Leitura.");
+            console.log("💡 Entidades sincronizadas: Area, Sensor, Leitura e Pesquisador.");
         });
     })
     .catch((error) => {

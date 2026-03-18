@@ -4,6 +4,7 @@ import * as dotenv from 'dotenv';
 import { Area } from '../entities/Area';
 import { Sensor } from '../entities/Sensor';
 import { Leitura } from '../entities/Leitura';
+import { Pesquisador } from '../entities/Pesquisador';
 
 // Carrega as variáveis de ambiente do seu arquivo .env
 dotenv.config();
@@ -17,7 +18,7 @@ export const AppDataSource = new DataSource({
     database: process.env.DB_NAME || 'reservaIot2',
     synchronize: true, // Em desenvolvimento, cria as tabelas automaticamente 
     logging: true,     // Exibe as queries SQL no terminal para acompanharmos [cite: 243]
-    entities: [Area, Sensor, Leitura], // Registra as entidades que criamos 
+    entities: [Area, Sensor, Leitura, Pesquisador], // Registra as entidades que criamos 
     subscribers: [],
     migrations: [],
 });
