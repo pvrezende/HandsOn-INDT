@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    /* Configurações de Ambiente */
+    "target": "es2020",                                  /* Versão do JS de saída [cite: 137] */
+    "module": "commonjs",                                /* Sistema de módulos para Node.js [cite: 139] */
+    "lib": ["esnext"],                                   /* Bibliotecas de tipos disponíveis */
+    "rootDir": "./src",                                  /* Onde estão seus arquivos TS [cite: 141] */
+    "outDir": "./dist",                                  /* Onde os arquivos JS compilados serão salvos [cite: 143] */
+    
+    /* Configurações OBRIGATÓRIAS para TypeORM (Resolve seus erros!) */
+    "emitDecoratorMetadata": true,                       /* Habilita metadados para decorators [cite: 163] */
+    "experimentalDecorators": true,                      /* Habilita o uso de decorators (@Entity, etc) [cite: 165] */
+    "strictPropertyInitialization": false,               /* Útil para entidades do TypeORM */
+
+    /* Verificações de Tipo e Segurança */
+    "strict": true,                                      /* Ativa todas as verificações estritas [cite: 154] */
+    "esModuleInterop": true,                             /* Melhora a importação de módulos [cite: 150] */
+    "skipLibCheck": true,                                /* Pula a verificação de bibliotecas externas [cite: 159] */
+    "forceConsistentCasingInFileNames": true,            /* Garante nomes de arquivos consistentes [cite: 153] */
+    "noUncheckedIndexedAccess": true,
+    "sourceMap": true
+  },
+  "include": ["src/**/*"],                               /* Inclui todos os arquivos da pasta src */
+  "exclude": ["node_modules"]                            /* Ignora a pasta node_modules */
+}
