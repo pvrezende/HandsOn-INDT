@@ -4,7 +4,8 @@ import { AppDataSource } from "./database/appDataSource";
 import areaRoutes from "./routes/areaRoutes"; 
 import leituraRoutes from "./routes/leituraRoutes";
 import sensorRoutes from "./routes/sensorRoutes";
-import pesquisadorRoutes from "./routes/pesquisador.routes"; // 💡 Novo import
+import pesquisadorRoutes from "./routes/pesquisador.routes";
+import userRoutes from "./routes/user.routes"; // 💡 Novo import
 
 // 1. Carrega variáveis de ambiente
 dotenv.config();
@@ -31,6 +32,7 @@ app.use("/api/areas", areaRoutes);
 app.use("/api/sensors", sensorRoutes);   
 app.use("/api/readings", leituraRoutes);
 app.use("/api/pesquisadores", pesquisadorRoutes); // 🚀 Nova rota registrada
+app.use("/api/users", userRoutes);
 
 // 5. Inicialização do Banco de Dados e Servidor
 AppDataSource.initialize()

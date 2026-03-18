@@ -5,6 +5,7 @@ import { Area } from '../entities/Area';
 import { Sensor } from '../entities/Sensor';
 import { Leitura } from '../entities/Leitura';
 import { Pesquisador } from '../entities/Pesquisador';
+import { User } from '../entities/User'; // 💡 Nova importação adicionada
 
 // Carrega as variáveis de ambiente do seu arquivo .env
 dotenv.config();
@@ -16,9 +17,10 @@ export const AppDataSource = new DataSource({
     username: process.env.DB_USER || 'postgres',
     password: process.env.DB_PASS || '123',
     database: process.env.DB_NAME || 'reservaIot2',
-    synchronize: true, // Em desenvolvimento, cria as tabelas automaticamente 
+    synchronize: true, // Em desenvolvimento, cria as tabelas automaticamente [cite: 101]
     logging: true,     // Exibe as queries SQL no terminal para acompanharmos [cite: 243]
-    entities: [Area, Sensor, Leitura, Pesquisador], // Registra as entidades que criamos 
+    // 💡 User adicionado à lista abaixo para resolver o erro de metadata
+    entities: [Area, Sensor, Leitura, Pesquisador, User], 
     subscribers: [],
     migrations: [],
 });
